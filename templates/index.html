@@ -1,3 +1,4 @@
+<!-- ref: https://stackoverflow.com/questions/22259847/application-not-picking-up-css-file-flask-python -->
 <!DOCTYPE html>
 <html>
 
@@ -5,11 +6,12 @@
     <title>
         Conference Predictor
     </title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
 
 <body>
-    <h1>Conference Predictor</h1>
-    <div>
+    <div id="form-div">
+        <h1 style="text-align: center;">Conference Predictor</h1>
         <form method="POST" action="/predict">
             <textarea rows="12" cols="60" name="title" placeholder="Enter your title here"
             value="{{ title }}">{{ title }}</textarea>
@@ -18,8 +20,44 @@
             </div>
         </form>
     </div>
-    <div>
+    <div id="pred-div">
         {{ prediction }}
+    </div>
+    <br>
+    <div id="table-div">
+        <table>
+            <caption>
+                Example:
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Conf</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Computing the Covers of a String in Linear Time</th>
+                <td>SODA</td>
+              </tr>
+              <tr>
+                <th scope="row">Modeling hidden topics on document manifold</th>
+                <td>CIKM</td>
+              </tr>
+              <tr>
+                <th scope="row">Price Updating in Combinatorial Prediction Markets with Bayesian Networks</th>
+                <td>UAI</td>
+              </tr>
+              <tr>
+                <th scope="row">Enabling fast prediction for ensemble models on data streams</th>
+                <td>KDD</td>
+              </tr>
+              <tr>
+                <th scope="row">Locating Partially Visible Objects: The Local Feature Focus Method</th>
+                <td>AAAI</td>
+              </tr>
+            </tbody>
+          </table>          
     </div>
 </body>
 

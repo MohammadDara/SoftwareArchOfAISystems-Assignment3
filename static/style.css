@@ -1,0 +1,45 @@
+/* ref: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Styling_tables */
+
+#form-div{
+  width: 500px;
+  min-height: 200px;
+  margin: 0 auto;
+}
+
+#pred-div{
+  width: 300px;
+  height: 50px;
+  margin: 0 auto;
+  background-color: #fbc9c9;
+}
+
+table {
+  width: 90%;
+  border: 1px solid rgb(128, 0, 19);
+  margin: 0 auto;
+}
+  
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+thead {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+
+tbody tr:nth-child(odd) {
+  background-color: #ff33cc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e495e4;
+}
+
+table {
+  background-color: #ff3347;
+}
+  
