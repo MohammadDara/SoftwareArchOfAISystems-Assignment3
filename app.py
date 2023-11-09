@@ -5,17 +5,17 @@ app = Flask(__name__)
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    email = request.form.get('content')
-    prediction = model_predict(email)
-    return render_template("index.html", prediction=prediction, email=email)
+    title = request.form.get('title')
+    prediction = model_predict(title)
+    return render_template("index.html", prediction=prediction, title=title)
 
 # Create an API endpoint
 @app.route('/api/predict', methods=['POST'])
 def predict_api():
     data = request.get_json(force=True)  # Get data posted as a json
-    email = data['content']
-    prediction = model_predict(email)
-    return jsonify({'prediction': prediction, 'email': email})
+    title = data['title']
+    prediction = model_predict(title)
+    return jsonify({'prediction': prediction, 'title': title})
 
 @app.route('/')
 def home():

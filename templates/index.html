@@ -3,16 +3,16 @@
 
 <head>
     <title>
-        Email Spam Classifier
+        Conference Predictor
     </title>
 </head>
 
 <body>
-    <h1>Email Spam Classifier</h1>
+    <h1>Conference Predictor</h1>
     <div>
         <form method="POST" action="/predict">
-            <textarea rows="12" cols="60" name="content" placeholder="Enter your email here"
-            value="{{ text }}">{{ text }}</textarea>
+            <textarea rows="12" cols="60" name="title" placeholder="Enter your title here"
+            value="{{ title }}">{{ title }}</textarea>
             <div>
                 <button type="submit">Submit</button>
             </div>
